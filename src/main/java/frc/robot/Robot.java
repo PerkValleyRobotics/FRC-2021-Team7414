@@ -107,7 +107,7 @@ public class Robot extends TimedRobot {
     distanceSensor.setEnabled(true);
     distanceSensor.setAutomaticMode(true);
     compressor = new Compressor();
-    compressor.setClosedLoopControl(false);
+    compressor.setClosedLoopControl(true);
     
     
     //ultrasanicDivided = new AnalogInput(PortMap.ANALOG_dividedUltrasanic);
@@ -179,9 +179,11 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
+    SmartDashboard.putNumber("Left Encoder", Gavin.getLeftDegrees());
+    SmartDashboard.putNumber("Right Encoder", Gavin.getRightDegrees());
     Scheduler.getInstance().run();
     limelight.updateLimelight();
-    compressor.setClosedLoopControl(false);
+    compressor.setClosedLoopControl(true);
     //compressor.clearAllPCMStickyFaults();
     //limelight.driverSight();
     // if (oi.getButtonStateJoystick(PortMap.JOYSTICK_testAutonStraight)) {
@@ -365,8 +367,8 @@ public class Robot extends TimedRobot {
     //  startTime = System.currentTimeMillis();
     //  timerFlag = true;
     //}
-    //SmartDashboard.putNumber("Left Encoder", oi.getLeftDegrees());
-    //SmartDashboard.putNumber("Right Encoder", oi.getRightDegrees());
+    SmartDashboard.putNumber("Left Encoder", Gavin.getLeftDegrees());
+    SmartDashboard.putNumber("Right Encoder", Gavin.getRightDegrees());
     /*SmartDashboard.putNumber("Flywheel RPM:", oi.getRPM());
     SmartDashboard.putBoolean("IMU Connected? ", ahrs.isConnected());
     SmartDashboard.putNumber("Yaw: ", ahrs.getYaw());

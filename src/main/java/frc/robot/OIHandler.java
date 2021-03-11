@@ -39,8 +39,7 @@ public class OIHandler {
 	Encoder flywheelEncoder;
 
 	double rightAxis;
-    double[] xVars = {};
-    double[] yVars = {};
+
 	public OIHandler() {
 		joystick = new Joystick(PortMap.CONTROLLER_joystick);
 		xboxcontroller = new XboxController(PortMap.CONTROLLER_xboxController);

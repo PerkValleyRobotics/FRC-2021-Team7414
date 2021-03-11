@@ -5,8 +5,9 @@ import frc.robot.Robot;
 
 public class ConveyorOnUltra extends Command {
 
-    long flagTime;
-    boolean flag;
+    // long startTime = 0;
+    // long flagTime;
+    // boolean flag;
     boolean finished;
 
     public ConveyorOnUltra() {
@@ -14,14 +15,19 @@ public class ConveyorOnUltra extends Command {
         requires(Robot.intake);
         setInterruptible(false);
         setName("Ultrasanic");
-        flag = false;
-        flagTime = 0;
+        // flag = false;
+        // flagTime = 0;
         finished = false;
     }
     
     public void execute() {
+        // if (startTime == 0) {
+        //     flagTime = System.currentTimeMillis() + startTime;
+        // }
+        
         Robot.conveyor.conveyorForwards();
         Robot.intake.intakeOn();
+
         /*if (Robot.ultrasanicDivided.getVoltage() > PortMap.k_ULTRA && !flag) {
             flag = true;
             flagTime = System.currentTimeMillis();
@@ -31,8 +37,8 @@ public class ConveyorOnUltra extends Command {
         }*/
     }
 
-    public boolean isFinished() {
-        return Robot.distanceSensor.getRange() > 200; //original was 300
+    public boolean isFinished() {  
+        return Robot.distanceSensor.getRange() > 200; // &&  flagTime == 200; //original was 300
     }
 
     public void interrupted() {
