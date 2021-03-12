@@ -8,5 +8,5 @@ public abstract class AutonConstants {
 
     public static double offLineLength = 200000;
 
-    public static double everyThingDriveLeft = 100;
+    public static double everyThingDriveLeft = 170000;
 }

@@ -26,6 +26,9 @@ import edu.wpi.first.cameraserver.CameraServer;
 
 import frc.robot.Commands.*;
 import frc.robot.OIHandler;
+import frc.robot.Commands.Autonomous.AutonCourseBarrel;
+import frc.robot.Commands.Autonomous.AutonCourseBounce;
+import frc.robot.Commands.Autonomous.AutonCourseSlalom;
 import frc.robot.Commands.Autonomous.AutonDoNothing;
 import frc.robot.Commands.Autonomous.AutonDriveOffLine;
 import frc.robot.Commands.Autonomous.AutonDriveStraight;
@@ -127,8 +130,9 @@ public class Robot extends TimedRobot {
 
     autoChooser = new SendableChooser<Command>();
     autoChooser.setDefaultOption("Drive and Shoot", new AutonEverything()); //Was AutonEverythingRight Changed for distance testing
-    //autoChooser.addOption("Do Nothing", new AutonDoNothing());
-    //autoChooser.addOption("Drive Off Line", new AutonDriveOffLine());
+    autoChooser.addOption("Barrel", new AutonCourseBarrel());
+    autoChooser.addOption("Bounce", new AutonCourseBounce());
+    autoChooser.addOption("Slalom", new AutonCourseSlalom());
     SmartDashboard.putData("AUTO", autoChooser);
 
     /*m_colorMatcher.addColorMatch(k_BLUE_TARGET);
@@ -189,6 +193,9 @@ public class Robot extends TimedRobot {
     // if (oi.getButtonStateJoystick(PortMap.JOYSTICK_testAutonStraight)) {
     //   Scheduler.getInstance().add(new AutonDriveStraight(50000));
     // }
+    if (oi.getButtonStateJoystick(4)) {
+      Scheduler.getInstance().add(new TeleopPOV());
+    }
     
     if (oi.getTrigger(PortMap.XBOX_leftTriggerAxis) > 0.5) {
       Scheduler.getInstance().add(new TeleopAim());

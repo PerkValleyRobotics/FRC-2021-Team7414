@@ -102,6 +102,9 @@ public class OIHandler {
 		testShooterButton = new JoystickButton(joystick, 11);
 		testShooterButton.whenPressed(new ShooterConveyor());
 	}
+	public int getJoystickPOV() {
+        return joystick.getPOV();
+    }
 	
 	 public double getJoystickX() {
 		return joystick.getX();

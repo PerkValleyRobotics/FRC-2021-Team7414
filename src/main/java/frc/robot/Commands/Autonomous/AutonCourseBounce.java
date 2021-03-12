@@ -3,7 +3,7 @@ package frc.robot.Commands.Autonomous;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.AutonConstants;
 import frc.robot.Robot;
-
+/*
 public class AutonEverything extends Command {
 
     long startTime = 0;
@@ -34,7 +34,7 @@ public class AutonEverything extends Command {
         }
         if (flag2) {
             Robot.Gavin.standardDrive(0.35, 0.0);
-            //Robot.shooter.spinVel(6000);
+            Robot.shooter.spinVel(6000);
             if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(length)) {
                 flag2 = false;
                 Robot.Gavin.stop();
@@ -82,8 +82,8 @@ public class AutonEverything extends Command {
         Robot.shooter.stopSpin();
         Robot.limelight.driverSight();
     }
-} 
-/*public class AutonEverything extends Command {
+} */
+public class AutonCourseBounce extends Command {
 
     long startTime = 0;
     boolean flag = true;
@@ -105,10 +105,13 @@ public class AutonEverything extends Command {
     boolean flag14 = false;
     boolean flag15 = false;
     boolean flag16 = false;
+    Boolean flag17 = false;
+    Boolean flag18 = false;
+    Boolean flagFin = false;
 
 
 
-public AutonEverything() {
+public AutonCourseBounce() {
         requires(Robot.conveyor);
         requires(Robot.shooter);
         //requires(Robot.intake);
@@ -132,6 +135,10 @@ public AutonEverything() {
         flag14 = false;
         flag15 = false;
         flag16 = false;
+        flag17 = false;
+        flag18 = false;
+        flagFin = false;
+
     } 
 
 
@@ -158,7 +165,7 @@ public void execute() {
         else if (flag2) {
         // moves forward 30 inches
             Robot.Gavin.standardDrive(0.0, 0.4);
-            if (Math.abs(Robot.Gavin.getLeftDegrees()) > Math.abs(leftStart) + Math.abs(285714.286)) { // 285714.286
+            if (Math.abs(Robot.Gavin.getLeftDegrees()) > Math.abs(leftStart) + Math.abs(286714.286)) { // 285714.286
                 flag2 = false;
                 flag3 = true;
                 Robot.Gavin.stop();
@@ -168,7 +175,7 @@ public void execute() {
         } else if(flag3) {
         // turns 20 degrees to the left
           Robot.Gavin.standardDrive(-0.35, 0.0);
-          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(132222.221)) { // 132222.221
+          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(134222.221)) { // 132222.221
             flag3 = false;
             flag4 = true;
             Robot.Gavin.stop();
@@ -234,14 +241,14 @@ public void execute() {
         else if(flag10) {
         // drives about 123 inches backwards
           Robot.Gavin.standardDrive(0.0 , -0.4);
-          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(974887.32)) { // 1174887.32
+          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(1100000.02)) { // 974887.32
             flag10 = false;
             flag11 = true;
             Robot.Gavin.stop();
             Robot.Gavin.resetEncoders();
           }
         }
-        else if(flag11) {
+        /*else if(flag11) {
         // turn 69 degrees to the left
           Robot.Gavin.standardDrive(-0.35, 0.0);
           if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(130333.333)) { // 130333.333
@@ -250,21 +257,21 @@ public void execute() {
             Robot.Gavin.stop();
             Robot.Gavin.resetEncoders();
           }
-        }
-        else if(flag12) {
+        }*/
+        else if(flag11) {
         // drives about 30 inches backwards
-          Robot.Gavin.standardDrive(0.0 , -0.4);
-          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(285714.286)) { // 285714.286
-            flag12 = false;
+          Robot.Gavin.standardDrive(0.0 , 0.4);
+          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(1100000.02)) { // 974887.32
+            flag11 = false;
             flag13 = true;
             Robot.Gavin.stop();
             Robot.Gavin.resetEncoders();
           }
         }
         else if(flag13) {
-        // turn 75 degrees to the left
+        // turn 90 degrees to the left
           Robot.Gavin.standardDrive(-0.35, 0.0);
-          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(141666.667)) { // 141666.667
+          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(170000)) { // 141666.667
             flag13 = false;
             flag14 = true;
             Robot.Gavin.stop();
@@ -273,8 +280,8 @@ public void execute() {
         }
         else if(flag14) {
         // drives about 123 inches backwards
-          Robot.Gavin.standardDrive(0.0 , -0.4);
-          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(1174887.32)) { // 1174887.32
+          Robot.Gavin.standardDrive(0.0 , 0.4);
+          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(807487.32)) { // 1174887.32
             flag14 = false;
             flag15 = true;
             Robot.Gavin.stop();
@@ -284,7 +291,7 @@ public void execute() {
         else if(flag15) {
         // turn 50 degrees to the left
           Robot.Gavin.standardDrive(-0.35, 0.0);
-          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(94444.4444)) { // 94444.4444
+          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(200000)) { // 94444.4444
             flag15 = false;
             flag16 = true;
             Robot.Gavin.stop();
@@ -294,18 +301,45 @@ public void execute() {
         else if(flag16) {
         // drives about 60 inches forward
           Robot.Gavin.standardDrive(0.0 , 0.4);
-          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(571428.571)) { // 571428.571
+          if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(1150000.02)) { // 750000
             flag16 = false;
+            flag17 = true;
             Robot.Gavin.stop();
             Robot.Gavin.resetEncoders();
           }
         }
+        else if(flag17) {
+            // Turn 45 degrees to the left
+            Robot.Gavin.standardDrive(0.0 , -0.4);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(441900.000000)) { // 571428.571
+            flag17 = false;
+            flag18 = true;
+            Robot.Gavin.stop();
+            Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag18) {
+            // drives about 60 inches forward
+            Robot.Gavin.standardDrive(-.35 , 0);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(-170000.000000)) { // 571428.571
+            flag18 = false;
+            flagFin = true;
+            Robot.Gavin.stop();
+            Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flagFin) {
+            Robot.Gavin.stop();
+            Robot.Gavin.resetEncoders();
+        }
+        
+        
 
 
     }
 
 public boolean isFinished() {
-    return false;
+    return flagFin;
 }
 
 public void end() {
@@ -314,4 +348,4 @@ public void end() {
     Robot.shooter.stopSpin();
     Robot.limelight.driverSight();
 }
-}*/
+}
