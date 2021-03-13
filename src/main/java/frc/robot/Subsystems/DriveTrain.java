@@ -41,7 +41,7 @@ public class DriveTrain extends Subsystem {
 	final double k_BACKWARD_DIFFERENCE = 0.0; //0.03
 	final double k_MINIMUM_THRESHOLD = 0.07;
 	final double k_MAXIMUM_THRESHOLD_AIM = 0.25;
-	final double k_ANGLE_THRESHOLD = 0.7;
+	final double k_ANGLE_THRESHOLD = 0.5; // 0.7
 
 	double sumErrorAim = 0;
 	double prevErrorAim = 0;

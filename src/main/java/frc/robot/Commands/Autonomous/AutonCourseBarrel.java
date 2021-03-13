@@ -61,7 +61,7 @@ public void execute() {
     }
 
 public boolean isFinished() {
-    return true;
+    return flag == 2;
 }
 
 public void end() {

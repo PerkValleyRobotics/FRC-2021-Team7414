@@ -11,10 +11,10 @@ public class Conveyor extends Subsystem {
 
     PWMVictorSPX conveyorTop;
     PWMVictorSPX conveyorBottom;
-    public static final double k_SPEED_TOP = -0.29; //og:.35
-    public static final double k_SPEED_BOTTOM = -0.29; //og:.35
-    public static final double k_SPEED_TOP_SHOOTING = -0.29;
-    public static final double k_SPEED_BOTTOM_SHOOTING = -0.29;
+    public static final double k_SPEED_TOP = -0.32; //og:.35
+    public static final double k_SPEED_BOTTOM = 0; //og:.35
+    public static final double k_SPEED_TOP_SHOOTING = -0.32; // -0.29
+    public static final double k_SPEED_BOTTOM_SHOOTING = 0; // -0.29
     boolean shooting = false;
 
     public Conveyor() {
