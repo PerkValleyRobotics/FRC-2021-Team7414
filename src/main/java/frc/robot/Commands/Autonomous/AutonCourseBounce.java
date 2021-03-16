@@ -107,6 +107,7 @@ public class AutonCourseBounce extends Command {
     boolean flag16 = false;
     Boolean flag17 = false;
     Boolean flag18 = false;
+    Boolean flag19 = false;
     Boolean flagFin = false;
 
 
@@ -137,6 +138,7 @@ public AutonCourseBounce() {
         flag16 = false;
         flag17 = false;
         flag18 = false;
+        flag19 = false;
         flagFin = false;
 
     } 
@@ -311,7 +313,7 @@ public void execute() {
         else if(flag17) {
             // Turn 45 degrees to the left
             Robot.Gavin.standardDrive(0.0 , -0.4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(441900.000000)) { // 571428.571
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(421900.000000)) { // 571428.571
             flag17 = false;
             flag18 = true;
             Robot.Gavin.stop();
@@ -321,13 +323,23 @@ public void execute() {
         else if(flag18) {
             // drives about 60 inches forward
             Robot.Gavin.standardDrive(-.35 , 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(-170000.000000)) { // 571428.571
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(-110000.000000)) { // 571428.571
             flag18 = false;
-            flagFin = true;
+            flag19 = true;
             Robot.Gavin.stop();
             Robot.Gavin.resetEncoders();
             }
         }
+        else if(flag19) {
+          // drives about 60 inches forward
+            Robot.Gavin.standardDrive(0.0 , -0.4);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(rightStart) + Math.abs(400000.02)) { // 750000
+              flag19 = false;
+              flagFin = true;
+              Robot.Gavin.stop();
+              Robot.Gavin.resetEncoders();
+            }
+          }
         else if(flagFin) {
             Robot.Gavin.stop();
             Robot.Gavin.resetEncoders();
