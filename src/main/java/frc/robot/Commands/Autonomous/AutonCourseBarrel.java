@@ -50,7 +50,79 @@ public void execute() {
                 Robot.Gavin.resetEncoders();
             }
         }
-        if(flag == 1) {
+       else if(flag == 1) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Robot.Gavin.getRightDegrees() > 100000) {
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 2) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Robot.Gavin.getRightDegrees() > 100000) {
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 3) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Robot.Gavin.getRightDegrees() > 100000) {
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 4) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Robot.Gavin.getRightDegrees() > 100000) {
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 5) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Robot.Gavin.getRightDegrees() > 100000) {
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 6) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Robot.Gavin.getRightDegrees() > 100000) {
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 7) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Robot.Gavin.getRightDegrees() > 100000) {
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 8) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Robot.Gavin.getRightDegrees() > 100000) {
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 9) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Robot.Gavin.getRightDegrees() > 100000) {
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 10) {
             Robot.Gavin.standardDrive(0, .4);
             if (Robot.Gavin.getRightDegrees() > 100000) {
                 flag += 1;
@@ -61,7 +133,7 @@ public void execute() {
     }
 
 public boolean isFinished() {
-    return flag == 2;
+    return flag == 10;
 }
 
 public void end() {
