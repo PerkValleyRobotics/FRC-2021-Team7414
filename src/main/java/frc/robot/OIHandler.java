@@ -29,6 +29,7 @@ public class OIHandler {
 	JoystickButton testShooterButton;
 	JoystickButton lockHookButton;
 	Button climbLeftButton;
+	Button tinyShotButton;
 	Button climbRightButton;
 	Button pistonButton;
 	Button rotationControlButton;
@@ -69,17 +70,16 @@ public class OIHandler {
 		//climbLeftButton.whenPressed(new ClimberLiftOneSide());
 		//climbRightButton = new JoystickButton(xboxcontroller, PortMap.XBOX_climbRight);
 		//climbRightButton.whenPressed(new ClimberLiftOneSide());
-		climbPistonButton = new JoystickButton(xboxcontroller, PortMap.XBOX_climbPiston);
-		climbPistonButton.whenPressed(new ClimbLockToggle());
+		//climbPistonButton = new JoystickButton(xboxcontroller, PortMap.XBOX_climbPiston);
+		//climbPistonButton.whenPressed(new ClimbLockToggle());
 		//climbHookButton = new JoystickButton(xboxcontroller, PortMap.XBOX_climbHook);
 		//climbHookButton.whenPressed(new ClimberHookDeploy());
-		climbBothButton = new JoystickButton(xboxcontroller, PortMap.XBOX_climbBoth);
-		climbBothButton.whenPressed(new ClimberLift());
+		//climbBothButton = new JoystickButton(xboxcontroller, PortMap.XBOX_climbBoth);
+		//climbBothButton.whenPressed(new ClimberLift());
 		//climbDown = new JoystickButton(xboxcontroller, PortMap.XBOX_climbDown);
 		//climbDown.whenPressed(new ClimberDown());
-		lockHookButton = new JoystickButton(xboxcontroller, PortMap.XBOX_hookLock);
-		lockHookButton.whenPressed(new ClimberHookLock());
-
+		//lockHookButton = new JoystickButton(xboxcontroller, PortMap.XBOX_hookLock);
+		//lockHookButton.whenPressed(new ClimberHookLock());
 		
 		
 		//colorwheel

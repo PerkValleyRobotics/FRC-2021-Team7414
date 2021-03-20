@@ -85,6 +85,10 @@ public class Shooter extends Subsystem {
         speed = 0.45;
     }
 
+    public void tinyShot(int velocity1) {
+        spinVel(velocity1);
+    }
+
     public void increaseVelocity(int rpm) {
         velocity += rpm;
     }

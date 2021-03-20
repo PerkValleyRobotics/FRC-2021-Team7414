@@ -24,6 +24,7 @@ public class ClimberLift extends Command {
     }
 
     protected boolean isFinished() {
-        return !Robot.oi.getButtonStateXbox(PortMap.XBOX_climbBoth);
+        // return !Robot.oi.getButtonStateXbox(PortMap.XBOX_climbBoth);
+        return true;
     }
 }

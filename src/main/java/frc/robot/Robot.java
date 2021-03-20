@@ -202,13 +202,18 @@ public class Robot extends TimedRobot {
     }
     SmartDashboard.putNumber("Limelight In Range? ", limelight.getRange());
     
-    if (oi.getButtonPressedXbox(PortMap.XBOX_climbHook)) {
-      if (oi.getButtonStateXbox(PortMap.XBOX_generalSpecialFeature)) {
-        Scheduler.getInstance().add(new ClimberHookDeployTimed());
-      } else {
-        Scheduler.getInstance().add(new ClimberHookDeploy());
-      }
+    //if (oi.getButtonPressedXbox(PortMap.XBOX_climbHook)) {
+     // if (oi.getButtonStateXbox(PortMap.XBOX_generalSpecialFeature)) {
+       // Scheduler.getInstance().add(new ClimberHookDeployTimed());
+     // } else {
+      //  Scheduler.getInstance().add(new ClimberHookDeploy());
+    //  }
+    //}
+
+    if (oi.getButtonStateJoystick(PortMap.JOYSTICK_tinyShot)){
+       Scheduler.getInstance().add(new ShooterTinyShot());
     }
+
     intake.putIntake();
     climber.putLock();
     shooter.putSpeed();
@@ -217,6 +222,7 @@ public class Robot extends TimedRobot {
       Scheduler.getInstance().add(new ShooterSpinUp());
       //Scheduler.getInstance().add(new ConveyorOnShoot());
     }
+
 
     // TODO: this could be our prototype limelight regressioning, so we should adjust our getRange() value and change our motor speed.
     if (oi.getTrigger(PortMap.XBOX_leftTriggerAxis) > 0.5) {

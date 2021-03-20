@@ -30,8 +30,9 @@ public abstract class PortMap {
 	public static int JOYSTICK_turnLeft = 9;
 	public static int JOYSTICK_turnRight = 10;
 	public static int JOYSTICK_intakePiston = 5;
-	public static int JOYSTICK_testAutonTurn = 11;
-	public static int JOYSTICK_testAutonStraight = 12;
+	public static int JOYSTICK_tinyShot = 11;
+	//public static int JOYSTICK_testAutonTurn = 11;
+	//public static int JOYSTICK_testAutonStraight = 12;
 	//public static int JOYSTICK_recordbutton = 4;
 	//public static int JOYSTICK_playback = 6;
 	//public static int JOYSTICK_aimBot = 6;
@@ -58,7 +59,8 @@ public abstract class PortMap {
 	public static int XBOX_climbDown = 15; //unused
 	public static int XBOX_shooterFree = 3;
 	public static int XBOX_climbHook = 4;
-	public static int XBOX_climbBoth = 1;
+	// public static int XBOX_climbBoth = 1;
+	public static int XBOX_tinyShot = 1;
 	public static int XBOX_reverseDirection = 7;
 	public static int XBOX_hookLock = 5;
 	//public static int XBOX_POV_climbBoth = 9;
