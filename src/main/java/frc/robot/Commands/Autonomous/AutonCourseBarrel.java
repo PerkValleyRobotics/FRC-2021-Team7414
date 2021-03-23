@@ -47,65 +47,65 @@ public void execute() {
             Robot.Gavin.resetEncoders();
             flag += 1;
         }
-        else if(flag == 0) { //Forward start
+        else if(flag == 0) {
             Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(471060.000000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(1311030.000000)) { // fowards 1
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
-       else if(flag == 1) { //turn left 1
-            Robot.Gavin.standardDrive(-.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(170000)) { //161280.000000
-                flag += 1;
-                Robot.Gavin.stop();
-                Robot.Gavin.resetEncoders();
-            }
-        }
-        else if(flag == 2) { //Forward through corner 1
-            Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(711180.000000)) {
-                flag += 1;
-                Robot.Gavin.stop();
-                Robot.Gavin.resetEncoders();
-            }
-        }
-        else if(flag == 3) {  //turn right 1
+       else if(flag == 1) { 
             Robot.Gavin.standardDrive(.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(130000.000000)) { //140000
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(154710.000000)) { //right 1
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
-        else if(flag == 4) { //Forwards corner 2
+        else if(flag == 2) { 
             Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(1450000.000000)) { //1600000
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(534600.000000)) { // foward cone 1
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
-        else if(flag == 5) { //turn right into corner 2
+        else if(flag == 3) {  
             Robot.Gavin.standardDrive(.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(130000.000000)) {//142650
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(179460.000000)) { //right 1
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
-        else if(flag == 6) {// drive through corner 2
+        else if(flag == 4) { 
             Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(650000.000000)) { //626940
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(554940.000000)) { // forward cone 1 2
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
-        else if(flag == 7) {  //turn left out of corner 2
-            Robot.Gavin.standardDrive(-.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(160000.000000)) { //156240.000000
+        else if(flag == 5) { 
+            Robot.Gavin.standardDrive(.35, 0);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(155250.000000)) {// turn right cone 1 2
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 6) {
+            Robot.Gavin.standardDrive(0, .4);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(512100.000000)) { //I give up on comments  good luck Joe
+                flag += 1;
+                Robot.Gavin.stop();
+                Robot.Gavin.resetEncoders();
+            }
+        }
+        else if(flag == 7) { 
+            Robot.Gavin.standardDrive(.35, 0);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(165510.000000)) { //156240.000000
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
@@ -113,7 +113,7 @@ public void execute() {
         }
         else if(flag == 8) {  //drive slightly forward to corner 3
             Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(530730.000000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(1351710.000000)) {
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
@@ -121,7 +121,7 @@ public void execute() {
         }
         else if(flag == 9) { //turn left into corner 3
             Robot.Gavin.standardDrive(-.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(190280.000000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(-165600.000000)) {
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
@@ -129,7 +129,7 @@ public void execute() {
         }
         else if(flag == 10) { //drive through corner 3
             Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(582930.000000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(-469260.000000)) {
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
@@ -137,7 +137,7 @@ public void execute() {
         }
         else if(flag == 11) {  //turn left out of corner 3
             Robot.Gavin.standardDrive(-.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(190210.000000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(-148950.000000)) {
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
@@ -145,7 +145,7 @@ public void execute() {
         }
         else if(flag == 12) {// drive to corner 4
             Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(522630.000000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(-471690.000000)) {
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
@@ -153,58 +153,56 @@ public void execute() {
         }
         else if(flag == 13) { //turn left into corner 4
             Robot.Gavin.standardDrive(-.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(-171630.000000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(702450.000000 - 32490.000000)) {
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
         else if(flag == 14) { //drive through corner 4
-            flag += 1;
-            /*
             Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(697770.000000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(1032210.000000)) {
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
-            }*/
+            }
         }
         else if(flag == 15) { //drive through corner 4
-            Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(582930.000000)) { //582930
+            Robot.Gavin.standardDrive(-.35, 0);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(164970.000000)) { //582930
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
         else if(flag == 16) { //turn right out of corner 4
-            Robot.Gavin.standardDrive(.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(126430.000000)) { //146430
+            Robot.Gavin.standardDrive(0, .4);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(-1053270.000000)) { //146430
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
         else if(flag == 17) { //drive forward to corner 5
-            Robot.Gavin.standardDrive(0, .4);
+            Robot.Gavin.standardDrive(-0.35, 0);
 
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(1778410.000000)) {//1678410.000000
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(-165870.000000)) {//1678410.000000
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
         else if(flag == 18) { //turn right into corner 5
-            Robot.Gavin.standardDrive(.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(172080.000000)) { //make turn less
+            Robot.Gavin.standardDrive(0, 0.4);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(-636660.000000)) { //make turn less
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
             }
         }
         else if(flag == 19) {  //drive through corner 5
-            Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(573840.000000)) { //573840.000000
+            Robot.Gavin.standardDrive(-0.35, 0);
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(202500.00000 - 33210.000000 )) { //573840.000000
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
@@ -212,7 +210,7 @@ public void execute() {
         }
         else if(flag == 20) { //turn for finish
             Robot.Gavin.standardDrive(-.35, 0);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(200000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(2447100.000000)) {
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
@@ -220,7 +218,7 @@ public void execute() {
         }
         else if(flag == 21) {// drive to finish
             Robot.Gavin.standardDrive(0, .4);
-            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(421560.000000)) {
+            if (Math.abs(Robot.Gavin.getRightDegrees()) > Math.abs(150)) {
                 flag += 1;
                 Robot.Gavin.stop();
                 Robot.Gavin.resetEncoders();
