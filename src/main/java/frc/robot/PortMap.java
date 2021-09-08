@@ -3,8 +3,8 @@ package frc.robot;
 public abstract class PortMap {
 	
 	//Controller
-	public static int CONTROLLER_joystick = 0;
-	public static int CONTROLLER_xboxController = 1;
+	public static int CONTROLLER_joystick = 1;
+	public static int CONTROLLER_xboxController = 0;
 	
 	//PWM
 	public static int PWM_left1 = 1; // unused

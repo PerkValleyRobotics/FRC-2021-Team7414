@@ -129,7 +129,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("POSITION", positionChooser);
 
     autoChooser = new SendableChooser<Command>();
-    autoChooser.setDefaultOption("Drive and Shoot", new AutonCourseBarrel()); //Was AutonEverythingRight Changed for distance testing
+    autoChooser.setDefaultOption("Drive and Shoot", new AutonEverythingRight()); //Was AutonEverythingRight Changed for distance testing
     autoChooser.addOption("Barrel", new AutonCourseBarrel());
     autoChooser.addOption("Bounce", new AutonCourseBounce());
     autoChooser.addOption("Slalom", new AutonCourseSlalom());
@@ -252,6 +252,7 @@ public class Robot extends TimedRobot {
         //shooter.changePower(0.0);+
         //shooter.resetSpeed();
         }
+        
       }//} //else {
         //shooter.changePower(0.5);
       //}

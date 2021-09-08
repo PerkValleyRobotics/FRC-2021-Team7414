@@ -82,7 +82,7 @@ public class Shooter extends Subsystem {
     }
 
     public void resetSpeed() {
-        speed = 0.45;
+        speed = 0.45; //.45
     }
 
     public void tinyShot(int velocity1) {
