@@ -27,7 +27,7 @@ public class ShooterTinyShot extends Command {
     }
     
     public boolean isFinished() {
-        return !Robot.oi.getButtonPressedXbox(PortMap.XBOX_tinyShot);
+        return !Robot.oi.getButtonPressedXbox(PortMap.JOYSTICK_tinyShot);
         //return !Robot.oi.getButtonStateJoystick(PortMap.JOYSTICK_shoot);
     }
 }

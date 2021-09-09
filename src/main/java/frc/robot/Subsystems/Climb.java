@@ -29,13 +29,13 @@ public class Climb extends Subsystem {
 
     public Climb() {
         //Hook deploy is not needed? Used to push up hooks, now replaced by springs
-        hookDeploy = new PWMVictorSPX(PortMap.PWM_climberHook);
+        //hookDeploy = new PWMVictorSPX(PortMap.PWM_climberHook);
         pistonState = ClimbPistonState.UNLOCKED;
         climbLock = new DoubleSolenoid(PortMap.PCM_climbLock1, PortMap.PCM_climbLock2);
-        hookDeploy.set(0);
+        //hookDeploy.set(0);
         climbLock.set(Value.kReverse); //try kOff?
-        //liftLeft = new CANSparkMax(PortMap.CAN_climbLeft, MotorType.kBrushless);
-        //liftRight = new CANSparkMax(PortMap.CAN_climbRight, MotorType.kBrushless);
+        liftLeft = new CANSparkMax(PortMap.CAN_climbLeft, MotorType.kBrushless);
+        liftRight = new CANSparkMax(PortMap.CAN_climbRight, MotorType.kBrushless);
         //liftLeftEncoder = liftLeft.getEncoder();
         //liftRightEncoder = liftRight.getEncoder();
 

@@ -53,19 +53,20 @@ public abstract class PortMap {
 	public static int XBOX_conveyorForwards = 6;
 	public static int XBOX_conveyorBackwards = 14; //unused
 	public static int XBOX_generalSpecialFeature = 8;
-	public static int XBOX_climbMotorExtend = 9;
-	public static int XBOX_climbMotorRetract = 10;
-	public static int XBOX_climbUnlock = 2;
-	public static int XBOX_climbLock = 3;
+	
+	public static int XBOX_climbMotorExtend = 3;
+	public static int XBOX_climbMotorRetract = 2;
+	public static int XBOX_climbUnlock = 4;
+	public static int XBOX_climbLock = 1;
 
 	//public static int XBOX_climbLeft = 9;
 	//public static int XBOX_climbRight = 10;
 	//public static int XBOX_climbPiston = 2;
 	//public static int XBOX_climbDown = 15; //unused
-	public static int XBOX_shooterFree = 3;
+	public static int XBOX_shooterFree = 9;
 	//public static int XBOX_climbHook = 4;
 	// public static int XBOX_climbBoth = 1;
-	public static int XBOX_tinyShot = 1;
+	//public static int XBOX_tinyShot = 1;
 	public static int XBOX_reverseDirection = 7;
 	//public static int XBOX_hookLock = 5;
 	//public static int XBOX_POV_climbBoth = 9;
