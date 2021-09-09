@@ -68,6 +68,20 @@ public class Climb extends Subsystem {
         pistonState = ClimbPistonState.UNLOCKED;
     }
 
+    public void unwindMotors(){
+        liftLeft.set(-k_LEFT_SPEED);
+        liftRight.set(-k_RIGHT_SPEED);
+    }
+
+    public void windMotors() {
+        liftLeft.set(k_LEFT_SPEED);
+        liftRight.set(k_RIGHT_SPEED);
+    }
+
+    public void stopMotors() {
+        liftLeft.set(0);
+        liftRight.set(0);
+    }
     /*public double getRightEncoder() {
         return 0;
         //return liftRightEncoder.getPosition();

@@ -3,19 +3,23 @@ package frc.robot.Commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import frc.robot.Robot;
+import frc.robot.PortMap;
 
-public class ClimbLockToggle extends Command {
+public class ClimbExtend extends Command {
 
     boolean flag = false;
 
-    public ClimbLockToggle() {
+    public ClimbExtend() {
         requires(Robot.climber);
         setInterruptible(false);
     }
 
     public void execute() {
-        Robot.climber.actuateLocks();
-        flag = true;
+        Robot.climber.unwindMotors();   
+        if(!Robot.oi.getButtonPressedXbox(PortMap.XBOX_climbMotorExtend)) {
+            Robot.climber.stopMotors();
+            flag = true;
+        }
     }
 
     public boolean isFinished() {

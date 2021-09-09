@@ -149,8 +149,8 @@ public class Robot extends TimedRobot {
     SmartDashboard.putBoolean("Compressor Enabled: ", compressor.enabled());
     SmartDashboard.putNumber("Left Encoder: ", Gavin.getLeftDegrees());
     SmartDashboard.putNumber("Right Encoder: ", Gavin.getRightDegrees());
-    SmartDashboard.putNumber("RightClimbEncoder: ", climber.getRightEncoder());
-    SmartDashboard.putNumber("LeftClimbEncoder: ", climber.getLeftEncoder());
+    //SmartDashboard.putNumber("RightClimbEncoder: ", climber.getRightEncoder());
+    //SmartDashboard.putNumber("LeftClimbEncoder: ", climber.getLeftEncoder());
     shooter.putSpeed();
     /*Color detectedColor = m_colorSensor.getColor();
     String colorString;
@@ -188,6 +188,17 @@ public class Robot extends TimedRobot {
     Scheduler.getInstance().run();
     limelight.updateLimelight();
     compressor.setClosedLoopControl(true);
+
+    if(oi.getButtonPressedXbox(PortMap.XBOX_climbUnlock)){
+      Scheduler.getInstance().add(new ClimbUnlock());
+    }else if(oi.getButtonPressedXbox(PortMap.XBOX_climbLock)){
+      Scheduler.getInstance().add(new ClimbLock());
+    }else if(oi.getButtonPressedXbox(PortMap.XBOX_climbMotorExtend)){
+      Scheduler.getInstance().add(new ClimbExtend());
+    } else if(oi.getButtonPressedXbox(PortMap.XBOX_climbMotorRetract)){
+      Scheduler.getInstance().add(new ClimbRetract());
+    }
+
     //compressor.clearAllPCMStickyFaults();
     //limelight.driverSight();
     // if (oi.getButtonStateJoystick(PortMap.JOYSTICK_testAutonStraight)) {
