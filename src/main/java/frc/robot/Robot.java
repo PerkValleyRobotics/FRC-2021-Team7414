@@ -271,14 +271,14 @@ public class Robot extends TimedRobot {
 
      if (oi.getPOVXbox() == 0) {
        if (speedFlag) {
-         //shooter.increasePower(0.01);
+         shooter.increasePower(0.01);
          shooter.increaseVelocity(50);
          speedFlag = false;
        }
      } else if (oi.getPOVXbox() == 180) {
        if (speedFlag) {
-         //shooter.increasePower(-0.01);
-         shooter.increaseVelocity(-50);
+         shooter.increasePower(-0.01);
+         //shooter.increaseVelocity(-50);
          speedFlag = false;
        }
      } else {
@@ -287,6 +287,8 @@ public class Robot extends TimedRobot {
 
     if (distanceSensor.getRange() > 0 && distanceSensor.getRange() < 200 && !conveyor.getCurrentCommandName().equalsIgnoreCase("Ultrasanic") && !(oi.getButtonStateXbox(PortMap.XBOX_conveyorForwards))) {
      Scheduler.getInstance().add(new ConveyorOnUltra());
+    } else if (oi.getButtonStateXbox(PortMap.XBOX_conveyorBackwards)){
+      Scheduler.getInstance().add(new ConveyorBackwards());
     }
 
     /*if (oi.getButtonStateJoystick(PortMap.JOYSTICK_intake)) {
@@ -295,7 +297,6 @@ public class Robot extends TimedRobot {
 
     if (oi.getButtonStateJoystick(PortMap.JOYSTICK_intake)) {
       if (!shooterTriggerHeld) {
-        shooterTriggerHeld = true;
         timePressed = System.currentTimeMillis();
       } else if (System.currentTimeMillis() - timePressed > 2000) {
         counter = 0;

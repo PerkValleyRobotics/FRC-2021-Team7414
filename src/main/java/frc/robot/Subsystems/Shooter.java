@@ -74,7 +74,7 @@ public class Shooter extends Subsystem {
     }
     
     public void putSpeed() {
-        SmartDashboard.putNumber("Shooter Speed: ", velocity);
+        SmartDashboard.putNumber("Shooter Speed: ", speed);
         SmartDashboard.putNumber("Right Power: ", rightShooter.getMotorOutputPercent());
         SmartDashboard.putNumber("Right RPM: ", rightShooter.getSelectedSensorVelocity() * (600.0/4096.0));
         SmartDashboard.putNumber("Left Power: ", leftShooter.getMotorOutputPercent());

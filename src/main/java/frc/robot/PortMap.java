@@ -51,7 +51,7 @@ public abstract class PortMap {
 	public static int XBOX_colorWheelColor = 13; //unused
 	public static int XBOX_colorWheelSpin = 12; //unused
 	public static int XBOX_conveyorForwards = 6;
-	public static int XBOX_conveyorBackwards = 14; //unused
+	public static int XBOX_conveyorBackwards = 5; //unused
 	public static int XBOX_generalSpecialFeature = 8;
 	
 	public static int XBOX_climbMotorExtend = 3;
@@ -95,8 +95,8 @@ public abstract class PortMap {
 	public static int CAN_pcm = 0;
 	public static int CAN_shooterLeft = 1;
 	public static int CAN_shooterRight = 2;
-	public static int CAN_climbLeft = 5;
-	public static int CAN_climbRight = 4;
+	public static int CAN_climbLeft = 4;
+	public static int CAN_climbRight = 5;
 	public static int CAN_left1 = 13;
 	public static int CAN_left2 = 7;
 	public static int CAN_right1 = 12;

@@ -55,6 +55,7 @@ public class DriveTrain extends Subsystem {
 
 	public DriveTrain() {
 
+		
 		left1 = new CANSparkMax(PortMap.CAN_left1, MotorType.kBrushless);
 		left2 = new CANSparkMax(PortMap.CAN_left2, MotorType.kBrushless);
 		right1 = new CANSparkMax(PortMap.CAN_right1, MotorType.kBrushless);

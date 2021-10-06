@@ -33,9 +33,12 @@ public class Climb extends Subsystem {
         pistonState = ClimbPistonState.UNLOCKED;
         climbLock = new DoubleSolenoid(PortMap.PCM_climbLock1, PortMap.PCM_climbLock2);
         //hookDeploy.set(0);
+        
         climbLock.set(Value.kReverse); //try kOff?
         liftLeft = new CANSparkMax(PortMap.CAN_climbLeft, MotorType.kBrushless);
-        liftRight = new CANSparkMax(PortMap.CAN_climbRight, MotorType.kBrushless);
+        //liftRight = new CANSparkMax(PortMap.CAN_climbRight, MotorType.kBrushless);
+        
+        
         //liftLeftEncoder = liftLeft.getEncoder();
         //liftRightEncoder = liftRight.getEncoder();
 
@@ -70,17 +73,17 @@ public class Climb extends Subsystem {
 
     public void unwindMotors(){
         liftLeft.set(-k_LEFT_SPEED);
-        liftRight.set(-k_RIGHT_SPEED);
+        //liftRight.set(-k_RIGHT_SPEED);
     }
 
     public void windMotors() {
         liftLeft.set(k_LEFT_SPEED);
-        liftRight.set(k_RIGHT_SPEED);
+        //liftRight.set(k_RIGHT_SPEED);
     }
 
     public void stopMotors() {
         liftLeft.set(0);
-        liftRight.set(0);
+        //liftRight.set(0);
     }
     /*public double getRightEncoder() {
         return 0;
