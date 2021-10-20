@@ -26,6 +26,7 @@ import edu.wpi.first.cameraserver.CameraServer;
 
 import frc.robot.Commands.*;
 import frc.robot.OIHandler;
+import frc.robot.Commands.Autonomous.AutonBetter;
 import frc.robot.Commands.Autonomous.AutonCourseBarrel;
 import frc.robot.Commands.Autonomous.AutonCourseBounce;
 import frc.robot.Commands.Autonomous.AutonCourseSlalom;
@@ -188,16 +189,32 @@ public class Robot extends TimedRobot {
     Scheduler.getInstance().run();
     limelight.updateLimelight();
     compressor.setClosedLoopControl(true);
-
-    if(oi.getButtonPressedXbox(PortMap.XBOX_climbUnlock)){
+    //Right Climb
+    if(oi.getButtonStateXbox(4)){ // Right up button pressed
+      climber.unwindRightMotor();
+    }else if(oi.getButtonStateXbox(1)) { //Right down button pressed
+      climber.windRightMotor();
+    } else{//stop
+      climber.stopRightMotor();
+    }
+    //left climb
+    if(oi.getPOVXbox() == 0){ // Right up button pressed
+      climber.unwindLeftMotor();
+    }else if(oi.getPOVXbox() == 180) { //Right down button pressed
+      climber.windLeftMotor();
+    } else{//stop
+      climber.stopLeftMotor();
+    }
+    /*if(oi.getButtonPressedXbox(PortMap.XBOX_climbUnlock)){
       Scheduler.getInstance().add(new ClimbUnlock());
     }else if(oi.getButtonPressedXbox(PortMap.XBOX_climbLock)){
       Scheduler.getInstance().add(new ClimbLock());
-    }else if(oi.getButtonPressedXbox(PortMap.XBOX_climbMotorExtend)){
+    }else 
+    if(oi.getButtonPressedXbox(4)){
       Scheduler.getInstance().add(new ClimbExtend());
-    } else if(oi.getButtonPressedXbox(PortMap.XBOX_climbMotorRetract)){
+    } else if(oi.getButtonPressedXbox(1)){
       Scheduler.getInstance().add(new ClimbRetract());
-    }
+    }*/
 
     //compressor.clearAllPCMStickyFaults();
     //limelight.driverSight();
@@ -382,7 +399,8 @@ public class Robot extends TimedRobot {
   public void autonomousInit() {
     super.autonomousInit();
     startingState = positionChooser.getSelected();
-    Scheduler.getInstance().add(autoChooser.getSelected());
+    //Scheduler.getInstance().add(autoChooser.getSelected());
+    Scheduler.getInstance().add(new AutonBetter());
   }
 
   @Override

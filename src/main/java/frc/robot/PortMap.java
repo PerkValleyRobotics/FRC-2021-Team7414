@@ -96,7 +96,7 @@ public abstract class PortMap {
 	public static int CAN_shooterLeft = 1;
 	public static int CAN_shooterRight = 2;
 	public static int CAN_climbLeft = 4;
-	public static int CAN_climbRight = 5;
+	public static int CAN_climbRight = 10;
 	public static int CAN_left1 = 13;
 	public static int CAN_left2 = 7;
 	public static int CAN_right1 = 12;

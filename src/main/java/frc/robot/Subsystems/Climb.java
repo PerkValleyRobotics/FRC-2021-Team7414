@@ -36,7 +36,7 @@ public class Climb extends Subsystem {
         
         climbLock.set(Value.kReverse); //try kOff?
         liftLeft = new CANSparkMax(PortMap.CAN_climbLeft, MotorType.kBrushless);
-        //liftRight = new CANSparkMax(PortMap.CAN_climbRight, MotorType.kBrushless);
+        liftRight = new CANSparkMax(PortMap.CAN_climbRight, MotorType.kBrushless);
         
         
         //liftLeftEncoder = liftLeft.getEncoder();
@@ -85,6 +85,33 @@ public class Climb extends Subsystem {
         liftLeft.set(0);
         //liftRight.set(0);
     }
+
+    public void unwindRightMotor(){
+        liftRight.set(-k_RIGHT_SPEED);
+    }
+    
+    public void unwindLeftMotor(){
+        liftLeft.set(-k_LEFT_SPEED);
+       
+    }
+
+    public void windRightMotor(){
+        liftRight.set(k_RIGHT_SPEED);
+    }
+
+    public void windLeftMotor(){
+        liftLeft.set(k_LEFT_SPEED);
+    }
+
+    public void stopRightMotor(){
+        liftRight.set(0);
+    }
+
+    public void stopLeftMotor(){
+        liftLeft.set(0);
+    }
+
+
     /*public double getRightEncoder() {
         return 0;
         //return liftRightEncoder.getPosition();
