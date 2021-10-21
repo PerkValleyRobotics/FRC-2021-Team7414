@@ -73,17 +73,17 @@ public class Climb extends Subsystem {
 
     public void unwindMotors(){
         liftLeft.set(-k_LEFT_SPEED);
-        //liftRight.set(-k_RIGHT_SPEED);
+        liftRight.set(-k_RIGHT_SPEED);
     }
 
     public void windMotors() {
         liftLeft.set(k_LEFT_SPEED);
-        //liftRight.set(k_RIGHT_SPEED);
+        liftRight.set(k_RIGHT_SPEED);
     }
 
     public void stopMotors() {
         liftLeft.set(0);
-        //liftRight.set(0);
+        liftRight.set(0);
     }
 
     public void unwindRightMotor(){

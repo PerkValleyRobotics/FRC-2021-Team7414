@@ -189,22 +189,32 @@ public class Robot extends TimedRobot {
     Scheduler.getInstance().run();
     limelight.updateLimelight();
     compressor.setClosedLoopControl(true);
-    //Right Climb
-    if(oi.getButtonStateXbox(4)){ // Right up button pressed
-      climber.unwindRightMotor();
-    }else if(oi.getButtonStateXbox(1)) { //Right down button pressed
-      climber.windRightMotor();
-    } else{//stop
-      climber.stopRightMotor();
+
+    //Both Climb
+    if(oi.getPOVXbox() == 180){ // Right up button pressed
+      climber.unwindMotors();
+    }else if(oi.getPOVXbox() == 0) { //Right down button pressed
+      climber.windMotors();
+    } else{//stop 
+      //Right Climb
+      if(oi.getButtonStateXbox(1)){ // Right up button pressed
+        climber.unwindRightMotor();
+      }else if(oi.getButtonStateXbox(2)) { //Right down button pressed
+        climber.windRightMotor();
+      } else{//stop
+        climber.stopRightMotor();
+      }
+      //left climb
+      if(oi.getButtonStateXbox(3)){ // Right up button pressed
+        climber.unwindLeftMotor();
+      }else if(oi.getButtonStateXbox(4)) { //Right down button pressed
+        climber.windLeftMotor();
+      } else{//stop
+        climber.stopLeftMotor();
+      }
     }
-    //left climb
-    if(oi.getPOVXbox() == 0){ // Right up button pressed
-      climber.unwindLeftMotor();
-    }else if(oi.getPOVXbox() == 180) { //Right down button pressed
-      climber.windLeftMotor();
-    } else{//stop
-      climber.stopLeftMotor();
-    }
+
+
     /*if(oi.getButtonPressedXbox(PortMap.XBOX_climbUnlock)){
       Scheduler.getInstance().add(new ClimbUnlock());
     }else if(oi.getButtonPressedXbox(PortMap.XBOX_climbLock)){
