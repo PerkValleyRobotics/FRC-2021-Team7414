@@ -11,9 +11,9 @@ public class Conveyor extends Subsystem {
 
     PWMVictorSPX conveyorTop;
     PWMVictorSPX conveyorBottom;
-    public static final double k_SPEED_TOP = -0.32; //og:.35
+    public static final double k_SPEED_TOP = -0.4; //og:.32
     public static final double k_SPEED_BOTTOM = 0; //og:.35
-    public static final double k_SPEED_TOP_SHOOTING = -0.32; // -0.29
+    public static final double k_SPEED_TOP_SHOOTING = -0.4; // -0.32
     public static final double k_SPEED_BOTTOM_SHOOTING = 0; // -0.29
     boolean shooting = false;
 
@@ -24,11 +24,11 @@ public class Conveyor extends Subsystem {
 
     public void conveyorForwards() {
         if (shooting) {
-            conveyorTop.set(-k_SPEED_TOP_SHOOTING);
-            conveyorBottom.set(-k_SPEED_BOTTOM_SHOOTING);
+            conveyorTop.set(k_SPEED_TOP_SHOOTING);
+            conveyorBottom.set(k_SPEED_BOTTOM_SHOOTING);
         } else {
-            conveyorTop.set(-k_SPEED_TOP);
-            conveyorBottom.set(-k_SPEED_BOTTOM);
+            conveyorTop.set(k_SPEED_TOP);
+            conveyorBottom.set(k_SPEED_BOTTOM);
         }
         SmartDashboard.putBoolean("DID CONVEYOR RUN: ", true);
     }

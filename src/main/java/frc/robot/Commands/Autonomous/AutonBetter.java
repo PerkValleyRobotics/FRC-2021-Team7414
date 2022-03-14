@@ -16,6 +16,8 @@ public class AutonBetter extends Command {
 
     public AutonBetter() {
         requires(Robot.Gavin);
+        requires(Robot.shooter);
+        requires(Robot.conveyor);
         Robot.Gavin.resetEncoders();
         leftStart = Robot.Gavin.getLeftDegrees();
         rightStart = Robot.Gavin.getRightDegrees();
@@ -38,12 +40,16 @@ public class AutonBetter extends Command {
                 flag = 2;
                 startTime =System.currentTimeMillis();
                 Robot.limelight.driverSight();
-                Robot.conveyor.conveyorForwards();
+
+                //Robot.conveyor.conveyorForwards();
                 Robot.shooter.changePower(0.455);
             }
-        } else if (flag ==2){
+        } else if (flag ==2){ 
+            Robot.shooter.changePower(0.455);//0.5
             Robot.shooter.spinVel(7700);
+            //Robot.conveyor.setShooterOn();
             
+            Robot.conveyor.conveyorForwards();
             if ((System.currentTimeMillis() - startTime)/1000.0 > 5){
                 flag = 3;
                 Robot.shooter.stopSpin();

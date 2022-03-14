@@ -14,6 +14,7 @@ import com.revrobotics.Rev2mDistanceSensor.RangeProfile;
 import com.revrobotics.Rev2mDistanceSensor.Unit;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.*;
 import edu.wpi.first.wpilibj.I2C;
@@ -41,6 +42,7 @@ import frc.robot.StateTrackers.IntakePositionState;
 import frc.robot.StateTrackers.StartingState;
 import frc.robot.Subsystems.*;
 import frc.robot.Vision;
+import frc.robot.Commands.Autonomous.AutonTeach;
 
 public class Robot extends TimedRobot {
 
@@ -96,8 +98,9 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotInit() {
-    shooter = new Shooter();
     Gavin = new DriveTrain();
+    shooter = new Shooter();
+    
     intake = new Intake();
     limelight = new Vision();
     limelight.lightOff();
@@ -120,7 +123,7 @@ public class Robot extends TimedRobot {
     
     oi = new OIHandler();
     //ahrs.enableLogging(true);
-
+ 
     startingState = "Center";
 
     positionChooser = new SendableChooser<String>();
@@ -142,6 +145,8 @@ public class Robot extends TimedRobot {
     m_colorMatcher.addColorMatch(k_YELLOW_TARGET);*/
 
     limelight.driverSight();
+
+    oi.rumble(0);
   }
 
   @Override
@@ -184,6 +189,9 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
+
+    oi.rumble(.5);
+
     SmartDashboard.putNumber("Left Encoder", Gavin.getLeftDegrees());
     SmartDashboard.putNumber("Right Encoder", Gavin.getRightDegrees());
     Scheduler.getInstance().run();
@@ -296,7 +304,7 @@ public class Robot extends TimedRobot {
       //}
     }
 
-     if (oi.getPOVXbox() == 0) {
+     /*if (oi.getPOVXbox() == 0) {
        if (speedFlag) {
          shooter.increasePower(0.01);
          shooter.increaseVelocity(50);
@@ -310,7 +318,8 @@ public class Robot extends TimedRobot {
        }
      } else {
        speedFlag = true;
-     }
+       } */
+         
 
     if (distanceSensor.getRange() > 0 && distanceSensor.getRange() < 200 && !conveyor.getCurrentCommandName().equalsIgnoreCase("Ultrasanic") && !(oi.getButtonStateXbox(PortMap.XBOX_conveyorForwards))) {
      Scheduler.getInstance().add(new ConveyorOnUltra());
@@ -403,6 +412,8 @@ public class Robot extends TimedRobot {
       yellowDetected = true;
       greenDetected = false;
     }*/
+
+    oi.xboxcontroller.setRumble(RumbleType.kLeftRumble, 1);
   }
 
   @Override
@@ -410,7 +421,7 @@ public class Robot extends TimedRobot {
     super.autonomousInit();
     startingState = positionChooser.getSelected();
     //Scheduler.getInstance().add(autoChooser.getSelected());
-    Scheduler.getInstance().add(new AutonBetter());
+    Scheduler.getInstance().add(new AutonTeach());
   }
 
   @Override

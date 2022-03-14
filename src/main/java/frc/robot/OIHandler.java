@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import frc.robot.Commands.*;
 import frc.robot.Commands.Autonomous.*;
 import frc.robot.Subsystems.Shooter;
@@ -140,6 +141,10 @@ public class OIHandler {
 
 	public boolean getReverse() {
 		return xboxcontroller.getRawButton(PortMap.XBOX_reverseDirection);
+	}
+
+	public void rumble(double amt){
+		xboxcontroller.setRumble(RumbleType.kRightRumble, 1);
 	}
 
 	public double getRPM() {

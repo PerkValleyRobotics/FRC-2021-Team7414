@@ -12,7 +12,7 @@ public class ConveyorOnUltra extends Command {
 
     public ConveyorOnUltra() {
         requires(Robot.conveyor);
-        requires(Robot.intake);
+        //requires(Robot.intake);
         setInterruptible(false);
         setName("Ultrasanic");
         // flag = false;
@@ -26,7 +26,7 @@ public class ConveyorOnUltra extends Command {
         // }
         
         Robot.conveyor.conveyorForwards();
-        Robot.intake.intakeOn();
+        //Robot.intake.intakeOn();
 
         /*if (Robot.ultrasanicDivided.getVoltage() > PortMap.k_ULTRA && !flag) {
             flag = true;
@@ -47,6 +47,6 @@ public class ConveyorOnUltra extends Command {
 
     public void end() {
         Robot.conveyor.conveyorOff();
-        Robot.intake.intakeOff();
+        //Robot.intake.intakeOff();
     }
 }
